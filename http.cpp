@@ -1,7 +1,7 @@
 #include <iostream>
-#include <curl/curl.h>
 #include <string>
 #include <cstring>
+#include <curl/curl.h>
 
 using namespace std;
 
@@ -40,9 +40,3 @@ string send_get_http_req(string url){
     }
     return 0;
 }
-
-/*int main(int argc, char** argv) {
-    string url = "https://api.github.com/repos/ret7020/WebRoboBlock/contributors?anon=true&key=value";
-    cout << send_get(url);
-    return 0;
-}*/

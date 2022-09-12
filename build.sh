@@ -1,1 +1,1 @@
-g++ test_http.cpp -lcurl -o ./build/webreq
+g++ bot.cpp -lcurl -o ./build/bot
