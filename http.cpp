@@ -35,7 +35,7 @@ string send_get_http_req(string url){
         curl_easy_cleanup(curl);
         curl_global_cleanup();
         curl = NULL;
-        cout << response_string;
+        //cout << response_string;
         return response_string;
     }
     return 0;

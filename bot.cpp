@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <chrono>
+#include <thread>
+
 
 #include "http.h"
 #include "api.h"
@@ -8,8 +11,18 @@
 #include "api.cpp"
 
 using namespace std;
+using namespace std::this_thread;
+using namespace std::chrono;
 
 int main(){
-    cout << auth_bot(API_TOKEN);
+    if (checkBotToken(API_TOKEN)){
+        cout << "[DEBUG] Token correct\n";
+        /*while (true){
+            cout << get_updates(API_TOKEN);
+            sleep_for(nanoseconds(10));
+        }*/
+    }else{  
+        cout << "[DEBUG] Invalid token. Exiting...\n";
+    }
     return 0;
 }
