@@ -2,12 +2,25 @@
 #include <string>
 #include <cstring>
 #include <curl/curl.h>
+#include <algorithm>
 
 using namespace std;
 
 size_t writeFunction(void* ptr, size_t size, size_t nmemb, string* data) {
     data -> append((char*)ptr, size * nmemb);
     return size * nmemb;
+}
+
+string convert_http_query(string str){
+
+    string::size_type pos = 0;    
+    while ((pos = str.find(' ', pos)) != string::npos)
+    {
+        str.replace(pos, 1, "%20");
+        pos += 3;
+    }
+
+    return str;
 }
 
 string send_get_http_req(string url){
